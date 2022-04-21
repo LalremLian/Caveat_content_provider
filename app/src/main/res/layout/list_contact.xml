@@ -27,7 +27,6 @@
             android:layout_height="wrap_content"
             android:text="name"
             android:textSize="20sp"
-            android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_margin="10dp"/>
     </LinearLayout>

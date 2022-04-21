@@ -1,10 +1,13 @@
-package com.example.contentprovider2;
+package com.example.contentprovider2.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.contentprovider2.model.ModelClass;
+import com.example.contentprovider2.R;
 
 import java.util.List;
 

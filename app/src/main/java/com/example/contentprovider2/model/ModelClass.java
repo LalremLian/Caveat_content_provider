@@ -1,4 +1,4 @@
-package com.example.contentprovider2;
+package com.example.contentprovider2.model;
 
 public class ModelClass {
     String name, number;

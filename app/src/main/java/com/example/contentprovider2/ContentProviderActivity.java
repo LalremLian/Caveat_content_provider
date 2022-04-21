@@ -14,14 +14,17 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.util.Log;
-import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 
-import java.lang.reflect.Array;
+import com.example.contentprovider2.adapter.AdapterRecycler;
+import com.example.contentprovider2.model.ModelClass;
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
 public class ContentProviderActivity extends AppCompatActivity {
 
+    LinearLayout linearLayout;
     RecyclerView recyclerView;
     AdapterRecycler adapter;
     ArrayList<ModelClass> modelClassArrayList;
@@ -35,6 +38,8 @@ public class ContentProviderActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        linearLayout = findViewById(R.id.linearContent);
+
         getFetch();
     }
 
@@ -43,6 +48,8 @@ public class ContentProviderActivity extends AppCompatActivity {
         {
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_CONTACTS},0);
         }
+        Snackbar snackbar = Snackbar.make(linearLayout,"Developed by Amawng Calvert",Snackbar.LENGTH_LONG);
+        snackbar.show();
         ContentResolver resolver = getContentResolver(); //creating an resolver object.............
         Uri uri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
 
